@@ -97,13 +97,15 @@ nav a:hover {
   display: block;
   overflow: hidden;
   width: 100%;
-  height: 0rem;
+  height: 1rem;
   text-align: right;
   align-items: center;
+  /*background: url("../../assets/images/wall-texture-7DB3DA.jpg");
   /*background: url("../../assets/images/green_plains_blue_sky.jpg");*/
   background-color:var(--head-dark-color);
-  background-repeat: no-repeat;
-  background-size: cover;
+  /*background-repeat: no-repeat;*/
+  /*background-size: cover;*/
+  background-repeat:repeat;
   background-position-y: center;
 }
 
@@ -138,6 +140,7 @@ aside {
   color: var(--head-dark-color);
   background-color: var(--head-color);
   border-right: 0.5rem solid var(--head-dark-color);
+  background: url("../../assets/images/wall-texture-7DB3DA.jpg") repeat center;
 }
 
 /* .content includes the card menus and text articles */
@@ -278,7 +281,6 @@ footer a:hover {
   transition-duration: 0.15s;
   transition-timing-function: linear;
 }
-
 
 /* -------------------------------------------------------
   Media queries to change style on different screen widths
