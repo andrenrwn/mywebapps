@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <title>andrenrwn's website</title>
@@ -11,25 +11,31 @@
   <header id="headerid">
     <h1>andrenrwn</h1>
     <nav id="navbar">
-      <a href="index.html">home</a> <a href="#headerid">about</a> <a href="#headerid">works</a> <a
-        href="#headerid">contact</a>
+      <a href="index.html">home</a> 
+      <a href="#about">about</a> 
+      <a href="#works">works</a> 
+      <a href="#footer">contact</a>
     </nav>
   </header>
 
   <section class="hero">
-    <!--<img src="./assets/images/green_plains_blue_sky.jpg"/>-->
+    <!--<img src="./assets/images/green_plains_blue_sky.jpg" alt=""/>-->
   </section>
 
   <section id="about" class="rowcontainer">
 
     <aside class="aside">
-      <h2>About</h2>
+      <h2>about</h2>
     </aside>
 
     <section class="content">
-      <h2>Welcome</h2>
-      <p>This site is intended to showcase a collection of different web applications that I have dabbled in. Any feedback is greatly appreciated.</p>
-      <p>Click on the images for more information</p>
+      <article>
+        <div>
+          <h2>Welcome to my website</h2>
+          <p>This site links to web applications that I have worked on. Any feedback is greatly appreciated.</p>
+        </div>
+        <img src="./assets/images/photo_avatar.png" class="photoavatar" alt="my profile photo"/>
+      </article>
     </section>
 
   </section>
@@ -37,24 +43,56 @@
   <section id="works" class="rowcontainer">
 
     <aside class="aside">
-      <h2>Works</h2>
+      <h2>works</h2>
     </aside>
 
     <section class="content">
       <section class="selectworks">
-        <div class="card" id="firstwork"><a href="#headerid"><img src="./assets/images/green_plains_blue_sky.jpg" class="cardimage" alt=""/></a></div>
-        <div class="card"><a href="#headerid"><img src="./assets/images/o365_opening_soon.jpg" class="cardimage" alt=""/></a></div>
-        <div class="card"><a href="#headerid"><img src="./assets/images/o365_opening_soon.jpg" class="cardimage" alt=""/></a></div>
-        <div class="card"><a href="#headerid"><img src="./assets/images/o365_opening_soon.jpg" class="cardimage" alt=""/></a></div>
+        <div class="card" id="firstwork" alt="my first work">
+          <a href="https://andrenrwn.github.io/urban-octo-telegram/Develop/">
+            <label class="cardlabel">
+              <h3>horiseon</h3>
+              <p>w3 accessibility</p>
+            </label>
+            <img src="./assets/images/work1_card3.png" class="cardimage" alt="image of a website"/>
+          </a>
+        </div>
+        <div class="card" alt="movie website">
+          <a href="https://andrenrwn.github.io/movies-website/publish/">
+            <label class="cardlabel">
+              <h3>movies</h3>
+              <p>CSS and JQuery</p>
+            </label>
+            <img src="./assets/images/work2_card.png" class="cardimage" alt="ghibli movies website image"/>
+          </a>
+        </div>
+        <div class="card" alt="coming soon">
+          <a href="#headerid">
+            <label class="cardlabel">
+              <h3></h3>
+              <p>coming soon</p>
+            </label>
+            <img src="./assets/images/o365_opening_soon_1_2.jpg" class="cardimage" alt="sign: opening soon"/>
+          </a>
+        </div>
+        <div class="card" alt="coming soon">
+          <a href="#headerid">
+            <label class="cardlabel">
+              <h3></h3>
+              <p>coming soon</p>
+            </label>
+            <img src="./assets/images/o365_opening_soon_1_2.jpg" class="cardimage" alt="sign: opening soon"/>
+          </a>
+        </div>
       </section>
     </section>
 
   </section>
 
   <footer id="footer">
-    <p>Contact: +65 1234 5678</p>
+    <p>Contact: <a href="tel:+6512345678">+65 12345678</a></p>
+    <p>E-mail: <a href="mailto: 141073152+andrenrwn@users.noreply.github.com">141073152+andrenrwn@users.noreply.github.com</a></p>
   </footer>
-
 
 </body>
 

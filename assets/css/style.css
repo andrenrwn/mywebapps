@@ -1,105 +1,209 @@
+/* ----------------------------------------
+   Style for a portfolio / resume-like site
+   Color theme: https://paletton.com/#uid=53w0u0kkuE26TWQe-NVpMvMucoE
+   ---------------------------------------- */
+:root {
+  --head-dark-color: #0E507E;
+  --head-low-color: #286FA2;
+  --head-mid-color: #4C8EBD;
+  --head-hi-color: #7DB3DA;
+  --head-color: #C2DFF3;
+  --border-color: white;
+  --border-dark-color: black;
+  --body-dark-color: #08884E;
+  --body-mid-color: #47C68C;
+  --body-color: #C0F5DD;
+  --body-dark-color2: #1B1E89;
+  --body-mid-color2: #5B5EC8;
+  --body-color2: #C8C9F5;
+}
+
 * {
   margin: 0;
+  padding: 0;
   font-family:Arial, Helvetica, sans-serif;
+  scroll-behavior:smooth; /* Smooth scrolling */
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+h2 {
+  font-size: 2.7rem;
+}
+h3 {
+  font-size: 2rem;
+}
+p {
+  font-size: 1rem;
 }
 
 body {
-  margin: 0;
-  background: #c9d1d1;
+  color: var(--head-dark-color);
+  background: var(--head-mid-color);
 }
 
+/* ------------------------------------------
+   <header> contains my name and the nav bar 
+   ----------------------------------------- */
 header {
   display: flex;
   width: 100%;
-  background-color: grey;
+  align-items: baseline;
+  background-color: var(--head-dark-color);
+  min-height: 7rem;
+  align-items:end;
 }
 
+/* Name */
 header h1 {
-  font-size: 3rem;
-  padding-left: 3rem;
+  font-size: 3.5rem;
+  max-height: 4rem;
+  padding-left: 4rem;
   padding-right: 1rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  color: white;
-  background-color: black;
+  color: var(--head-color);
+  background-color: var(--border-dark-color);
 }
 
+/* top nav bar */
 nav {
   display: inline;
   padding: 1%;
-  width: 100%;
+  width: 98%;
   text-align: right;
   min-height: 2rem;
   font-size: 2rem;
 }
 
+/* nav bar font color */
 nav a {
-  color: white;
+  color: var(--head-color);
+  transition-property: all;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
 }
 
-.rowcontainer {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  background-color:blue;
+nav a:hover {
+  background-color: black;
+  transition-property: all;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
 }
 
-.content {
-  width: 73%;
-}
-
-aside {
-  margin-top: 5px;
-  margin-right: 5px;
-  padding: 1%;
-  width: 22%;
-  min-height: 100%;
-  float: left;
-  text-align: right;
-  background-color: #1da1f2;
-  border-right: 0.5rem solid darkgrey;
-}
-
+/* the hero is a picture bar after the navigation bar */
 .hero {
   display: block;
   overflow: hidden;
   width: 100%;
-  height: 5rem;
+  height: 0rem;
   text-align: right;
   align-items: center;
-  background: url("../../assets/images/green_plains_blue_sky.jpg");
-  background-color:lightslategray;
+  /*background: url("../../assets/images/green_plains_blue_sky.jpg");*/
+  background-color:var(--head-dark-color);
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
+  background-position-y: center;
 }
 
+/* use this to use an image tag instead for the hero
 .hero img {
   width: 100%;
   align-items: center;
 }
+*/
 
-footer {
+/* ------------------------------------------ -------------------------------------------------------------
+   Content rows. Each row container has an .aside and .content which dynamically resize vertically together
+   -------------------------------------------------------------------------------------------------------- */
+.rowcontainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 0.8rem;
-  height: 2rem;
-  background-color:green;
+  flex-wrap: wrap;
+  flex: 1 1 100%;
+  width: 100%;
+  background-color:var(--head-color));
 }
 
+/* .aside contains a topic header */
+aside {
+  margin-top: 5px;
+  margin-right: 5px;
+  padding: 1%;
+  width:23%;
+  flex: 0 0 23%;
+  min-height: 100%;  /* stretch horizontally with content box */
+  float: left;
+  text-align: right;
+  color: var(--head-dark-color);
+  background-color: var(--head-color);
+  border-right: 0.5rem solid var(--head-dark-color);
+}
+
+/* .content includes the card menus and text articles */
+.content {
+  display: inline;
+  width: 73%;
+  padding: 0%;
+  flex: 1 1 73%; /* grow right to fill the 75% column */
+}
+
+/* style for any articles */
+.content article {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  padding: 5px;
+  text-transform: lowercase;
+  line-height: 1.5;
+  background-color: var(--head-color);
+}
+
+article h2 {
+  font-size: 1.8rem;
+}
+
+/* Requirement: Photo or avatar */
+.photoavatar {
+  float:right;
+  max-height: 150px;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+  -webkit-mask-image:-webkit-gradient(linear, left top, right bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+  mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+.photoavatar:hover {
+  -webkit-mask-image:-webkit-gradient(linear, left top, right bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,1)));
+  mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,1));
+}
+
+/* ------------------------------------------
+   work cards behavior
+   ------------------------------------------ */
 .selectworks {
+  margin: 0%;
+  padding: 0%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+/* .card styles to select works */
 .card {
+  position:relative;
+  padding-top:20px;
+  display:inline-block;
   margin:1%;
   padding:0;
-  max-width:47%;
-  border: 0px solid;
-  display: flex;
+  max-width:46.5%;
+  max-height:35vh;
+  overflow: hidden;
+  flex: 1 1 46.5%;
+  border: 5px solid;
+  border-color: var(--border-dark-color);
+  /*box-shadow: 5px 5px 5px var(--head-dark-color);*/
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -110,7 +214,9 @@ footer {
 }
 
 .card:hover {
-  box-shadow:inset;
+  box-shadow: 5px 5px 5px var(--head-dark-color) inset;
+  border-width:5px solid;
+  /*border-color: rgba(255,255,255,1);*/
   opacity:66%;
   transition-property: all;
   transition-duration: 0.15s;
@@ -119,11 +225,88 @@ footer {
 
 .cardimage {
   display: block;
-  width: 98%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
+.cardlabel {
+  display: inline-block;
+  position: absolute;
+  bottom:20px;
+  left:-5px;
+  color: var(--border-color);
+  padding:10px 10px;
+  font-size:20px;
+  /* border:solid 5px var(--border-dark-color); */
+  background-color:var(--border-dark-color);
+  max-width: 200px;
+  text-align: left;
+}
+
 #firstwork {
   max-width: 98%;
+  flex: 1 1 98%;
+}
+
+
+/* ------------------------------------------
+   footer style
+   ------------------------------------------ */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+  height: 3.5rem;
+  color: var(--head-color);
+  background-color: var(--head-dark-color);
+}
+
+footer a {
+  color: var(--head-color);
+  transition-property: all;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+}
+
+footer a:hover {
+  background-color: black;
+  transition-property: all;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+}
+
+
+/* -------------------------------------------------------
+  Media queries to change style on different screen widths
+  --------------------------------------------------------*/
+
+  /* fix width to prevent flex from displaying one column too early */
+@media screen and (max-width: 925px) {
+  .card {
+    margin:1%;
+    padding:0;
+    max-width:46%;
+    flex: 1 1 46%;
+  }
+}
+
+/* Small width screens will show the cards in one column instead of two */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+  aside {
+    min-width: 96%;
+    border-bottom: 0.5rem solid var(--head-dark-color);
+  }
+  .card {
+    margin:1%;
+    padding:0;
+    max-width:45.5%;
+    flex: 1 1 45.5%;
+  }
 }
