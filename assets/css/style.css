@@ -83,6 +83,8 @@ nav a {
   transition-property: all;
   transition-duration: 0.15s;
   transition-timing-function: linear;
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
 }
 
 nav a:hover {
@@ -94,19 +96,32 @@ nav a:hover {
 
 /* the hero is a picture bar after the navigation bar */
 .hero {
-  display: block;
+  display: inline-block;
+  position: relative;
   overflow: hidden;
   width: 100%;
-  height: 1rem;
-  text-align: right;
-  align-items: center;
-  /*background: url("../../assets/images/wall-texture-7DB3DA.jpg");
-  /*background: url("../../assets/images/green_plains_blue_sky.jpg");*/
+  height: 5rem;
+  /*background: url("../../assets/images/wall-texture-7DB3DA.jpg");*/
+  background: url("../../assets/images/green_plains_blue_sky.jpg");
   background-color:var(--head-dark-color);
-  /*background-repeat: no-repeat;*/
-  /*background-size: cover;*/
-  background-repeat:repeat;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*background-repeat:repeat;*/
   background-position-y: center;
+  opacity: 100%;
+  -webkit-mask-image:-webkit-gradient(linear, left top, right bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,1)));
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1));
+}
+
+/* hero subtitle */
+.hero h3 {
+  display: inline-block;
+  position: absolute;
+  bottom:0.2rem;
+  right:0.2rem;
+  background: var(--head-dark-color);
+  color: var(--head-color);
+  text-align: right;
 }
 
 /* use this to use an image tag instead for the hero
@@ -297,7 +312,7 @@ footer a:hover {
 }
 
 /* Small width screens will show the cards in one column instead of two */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 790px) {
   header {
     flex-direction: column;
   }
