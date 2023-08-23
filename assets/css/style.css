@@ -222,13 +222,13 @@ article h2 {
   display:inline-block;
   margin:1%;
   padding:0;
-  max-width:46.5%;
+  max-width:calc(48% - 20px);
   max-height:35vh;
   overflow: hidden;
-  flex: 1 1 46.5%;
+  flex: 1 1 calc(48% - 20px);
   border: 5px solid;
-  /*border-color: var(--border-dark-color);*/
-  /*box-shadow: 5px 5px 5px var(--head-dark-color);*/
+  border-color: var(--head-dark-color);
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.75);
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -238,10 +238,10 @@ article h2 {
   transition-timing-function: linear;
 }
 
-.card:hover {
+.card:hover, .card:focus {
   box-shadow: 5px 5px 5px var(--head-dark-color) inset;
   border-width:5px solid;
-  /*border-color: rgba(255,255,255,1);*/
+  border-color: var(--border-dark-color);
   opacity:66%;
   transition-property: all;
   transition-duration: 0.15s;
@@ -270,8 +270,8 @@ article h2 {
 }
 
 #firstwork {
-  max-width: 98%;
-  flex: 1 1 98%;
+  max-width: calc(98% - 20px);
+  flex: 1 1 calc(98% - 20px);
 }
 
 
@@ -313,8 +313,6 @@ footer a:hover {
   .card {
     margin:1%;
     padding:0;
-    max-width:46%;
-    flex: 1 1 46%;
   }
 }
 
@@ -332,7 +330,5 @@ footer a:hover {
   .card {
     margin:1%;
     padding:0;
-    max-width:45.5%;
-    flex: 1 1 45.5%;
   }
 }
