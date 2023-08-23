@@ -32,7 +32,7 @@ h2 {
   font-size: 2.7rem;
 }
 h3 {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 p {
   font-size: 1rem;
@@ -41,6 +41,8 @@ p {
 body {
   color: var(--head-dark-color);
   background: var(--head-mid-color);
+  background-image: linear-gradient(to left, var(--head-mid-color), var(--head-dark-color));
+
 }
 
 /* ------------------------------------------
@@ -53,6 +55,7 @@ header {
   background-color: var(--head-dark-color);
   min-height: 7rem;
   align-items:end;
+  background-image: linear-gradient(to left, var(--head-dark-color), black);
 }
 
 /* Name */
@@ -65,6 +68,7 @@ header h1 {
   margin-bottom: 0.5rem;
   color: var(--head-color);
   background-color: var(--border-dark-color);
+  background-image: linear-gradient(to left, var(--head-dark-color), black);
 }
 
 /* top nav bar */
@@ -119,9 +123,11 @@ nav a:hover {
   position: absolute;
   bottom:0.2rem;
   right:0.2rem;
+  padding: 0.1rem;
   background: var(--head-dark-color);
   color: var(--head-color);
   text-align: right;
+  opacity: 65%;
 }
 
 /* use this to use an image tag instead for the hero
@@ -155,7 +161,8 @@ aside {
   color: var(--head-dark-color);
   background-color: var(--head-color);
   border-right: 0.5rem solid var(--head-dark-color);
-  background: url("../../assets/images/wall-texture-7DB3DA.jpg") repeat center;
+  background-image: linear-gradient(to left, var(--head-color), var(--head-dark-color));
+  /*background: url("../../assets/images/wall-texture-7DB3DA.jpg") repeat center;*/
 }
 
 /* .content includes the card menus and text articles */
@@ -220,7 +227,7 @@ article h2 {
   overflow: hidden;
   flex: 1 1 46.5%;
   border: 5px solid;
-  border-color: var(--border-dark-color);
+  /*border-color: var(--border-dark-color);*/
   /*box-shadow: 5px 5px 5px var(--head-dark-color);*/
   justify-content: center;
   align-items: center;
@@ -315,10 +322,12 @@ footer a:hover {
 @media screen and (max-width: 790px) {
   header {
     flex-direction: column;
+    align-items:start;
   }
   aside {
     min-width: 96%;
     border-bottom: 0.5rem solid var(--head-dark-color);
+    border-bottom-right-radius: 5px;
   }
   .card {
     margin:1%;
