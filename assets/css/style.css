@@ -269,6 +269,10 @@ article h2 {
   text-align: left;
 }
 
+.cardlabel details {
+  overflow: hidden;
+}
+
 #firstwork {
   max-width: calc(98% - 20px);
   flex: 1 1 calc(98% - 20px);
